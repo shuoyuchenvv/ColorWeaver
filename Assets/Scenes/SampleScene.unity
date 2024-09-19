@@ -2535,11 +2535,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 873065895}
-  drawCostPerSecond: 50
-  segmentSpacing: 0.5
+  energyCostPerSet: 10
+  spheresPerSet: 3
+  horizontalSpacing: 1
   sphereColliderPrefab: {fileID: 5965558469851706657, guid: b84e8dde855c9f340b9f2d6c7c9fc7a0,
     type: 3}
   offset: {x: 0, y: -1.5, z: 0}
+  sphereVerticalOffset: 0.5
 --- !u!1 &906305966
 GameObject:
   m_ObjectHideFlags: 0

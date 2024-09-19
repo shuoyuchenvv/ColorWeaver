@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class EnergyBar : MonoBehaviour
 {
     public Slider energySlider;
@@ -35,5 +36,17 @@ public class EnergyBar : MonoBehaviour
     private void UpdateEnergyBar()
     {
         energySlider.value = currentEnergy / maxEnergy;
+    }
+
+    // Add a public property to access the current energy
+    public float CurrentEnergy
+    {
+        get { return currentEnergy; }
+    }
+
+    // Optional: Check if enough energy is available for a certain cost
+    public bool HasEnoughEnergy(float amount)
+    {
+        return currentEnergy >= amount;
     }
 }
