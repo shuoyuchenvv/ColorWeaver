@@ -1,0 +1,161 @@
+﻿title: StartA
+---
+Hello from Cube!
+===
+
+title: StartB
+---
+Hello from Sphere!
+===
+
+
+title: Flower
+---
+Kid, you're invincible.
+===
+
+
+title: FlowerEnd
+---
+Don't go any further, there's nothing.
+===
+
+
+title: BirdTeach
+---
+Hey! Your nest-building skills are terrible! What kind of bird are you, anyway? (Press E)
+
+Not a bird? But everyone knows only birds exist under the yellow sky!
+
+Have you heard of the Mysterious Fruit higher up in the tower? We’ve flown up countless times but have never seen it ourselves.
+
+So you’re climbing the tower? Then please, go and find that fruit!
+
+Let me teach you a bird’s skill you might need! We’ll inject the power of yellow into the MARBLE — so no wings needed to fly!
+
+Now, get close to the marble and double-click to give it a try.
+
+If you want to pull the power out, just doble-click again! (Press E)
+===
+
+
+title: BirdTeachYellow
+---
+YOU LEARNED TO FLY!!! I accept you as an honorary Spotted Dove ^^. (Press E)
+
+Then try this, double-click it again to pull the power out.
+
+Now go forth, reach higher—like a true bird! BYE! (Press E)
+===
+
+
+
+
+title: BirdTeachBlue
+---
+Oh, thanks for making me a cozy little nest! (Press E)
+
+How did you know I was too cold and tired to go any further? 
+
+I’m just flapping my way up this tower under the shiny yellow sky, but oopsie—ran into a little hiccup along the way! 
+
+As a reward, let me show you how to use those mysterious marbles. They say that infusing it with the power from different periods creates different effects. 
+
+I only know the yellow one creates Wind. Give it a double-click and see what happens!
+===
+
+
+
+title: BirdTeachGreenOrRed
+---
+Please don't learn ahead; I shouldn't be teaching you this right now.
+
+Don’t forget how to use the marble, okay? Bye!
+===
+
+
+
+title: BirdForceGoUp
+---
+Is there anything floating?
+
+===
+
+
+
+
+
+title: TomatoIntroduction
+---
+Oh my, your skin is transparent! (Press E)
+
+A mysterious fruit? What’s that? Well, I am a fruit… but who isn’t, here in the red world?
+
+Every fruit dreams of falling, then moving, and spreading seeds far and wide. I wonder when I’ll finally get to fall… or maybe I’ve already fallen and just got too hurt to move.
+
+Did you know? There’s a legend that all fruits once fell from a single, giant, strange plant higher up. I’d love to see it again.
+
+But I can’t move. So, let me grant you the power of red. If you could take my power to that plant, it would mean so much. They say it has a magical conduit… I hope I could run through it someday.
+
+Anyway, double click to inject my power to the marble. Wish you a safe journey!
+===
+
+
+
+title: WoodSign1
+---
+Welcome to the Bird Trial!!! (Press E or Enter to continue)
+You can not get out unless you finish the trial~
+===
+
+
+
+
+title: InteractionInstruction
+---
+Press E to interact
+===
+
+
+
+title: GreenSign
+---
+This is a greenhouse. A plant slumbers here. (Press E)
+===
+
+
+
+title: GreenDialogueEndGame
+---
+The energy of fruit... I can feel it coursing through me. My roots stir…(Press E)
+
+What? I should teach you how to inject green into the marble? Oh, I suppose I should.
+
+Too bad VV and Sherry have set the scope too big. They are tangled up in making this game juicy and bug-free — while I, naturally, effortlessly achieve both with every single fruit I grow.
+
+Let’s end the game here. See the flame above you? Go touch it. (Press E)
+===
+
+
+
+
+title: StartChoice
+---
+NPC: Hello! Let me see what kind of person you are. If you hadn't eaten for a day, what would you choose to eat?
+
+<<options>>
+    <<option "Boba Tea">>
+        NPC: You're the one who likes Boba tea!
+        <<jump End>>
+    <<option "Fried Chicken">>
+        NPC: You're the one who likes Fried chicken!
+        <<jump End>>
+    <<option "Aunt Tiffany">>
+        NPC: You're the one who likes Aunt Tiffany!
+        <<jump End>>
+<<endoptions>>
+
+title: End
+---
+NPC: Have a great day!
+===

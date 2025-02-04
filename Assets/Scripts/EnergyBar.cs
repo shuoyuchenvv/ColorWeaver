@@ -1,25 +1,32 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class EnergyBar : MonoBehaviour
 {
     public Slider energySlider;
     public float maxEnergy = 100f;
+    public float regenerationRate = 5f; // Amount to regenerate per second
+    public float regenerationDelay = 10f; // Delay before regeneration starts after inactivity
+    public GameObject player; // Reference to the player for transparency control
+
+
     private float currentEnergy;
+    public bool isRegenerating = false;
+    private float lastEnergyUseTime = 0f; // Tracks the time of the last energy usage
 
     void Start()
     {
         currentEnergy = maxEnergy;
         UpdateEnergyBar();
+        UpdatePlayerTransparency();
     }
 
     public void RefillEnergy(float amount)
     {
         currentEnergy = Mathf.Min(currentEnergy + amount, maxEnergy);
         UpdateEnergyBar();
+        UpdatePlayerTransparency();
     }
 
     public bool UseEnergy(float amount)
@@ -28,8 +35,21 @@ public class EnergyBar : MonoBehaviour
         {
             currentEnergy -= amount;
             UpdateEnergyBar();
+            UpdatePlayerTransparency();
+
+            // Reset the timer when energy is used
+            lastEnergyUseTime = Time.time;
+
+            // Stop regeneration if energy is used again
+            if (isRegenerating)
+            {
+                StopCoroutine("RegenerateEnergy");
+                isRegenerating = false;
+            }
+
             return true;
         }
+        Debug.Log("Energy insufficient for action.");
         return false;
     }
 
@@ -38,15 +58,51 @@ public class EnergyBar : MonoBehaviour
         energySlider.value = currentEnergy / maxEnergy;
     }
 
-    // Add a public property to access the current energy
-    public float CurrentEnergy
+    private void UpdatePlayerTransparency()
     {
-        get { return currentEnergy; }
+        float transparency = currentEnergy / maxEnergy;
+
+        TransparencyController transparencyController = player.GetComponent<TransparencyController>();
+
+        if (transparencyController != null)
+        {
+            transparencyController.ApplyEnergyTransparency(transparency);
+        }
     }
 
-    // Optional: Check if enough energy is available for a certain cost
+
+    void Update()
+    {
+        // Check if the regeneration delay has passed since the last energy use
+        if (!isRegenerating && Time.time - lastEnergyUseTime >= regenerationDelay && currentEnergy < maxEnergy)
+        {
+            StartCoroutine(RegenerateEnergy());
+        }
+    }
+
+    IEnumerator RegenerateEnergy()
+    {
+        isRegenerating = true;
+
+        // Regenerate energy slowly over time
+        while (currentEnergy < maxEnergy)
+        {
+            currentEnergy = Mathf.Min(currentEnergy + regenerationRate * Time.deltaTime, maxEnergy);
+            UpdateEnergyBar();
+            UpdatePlayerTransparency();
+            yield return null; // Wait for the next frame
+        }
+
+        isRegenerating = false;
+    }
+
     public bool HasEnoughEnergy(float amount)
     {
         return currentEnergy >= amount;
+    }
+
+    public float CurrentEnergy
+    {
+        get { return currentEnergy; }
     }
 }

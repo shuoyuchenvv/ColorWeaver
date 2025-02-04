@@ -1,0 +1,19 @@
+{
+    "pages": [
+      {
+        "credits": [
+          { "role": "Designer", "names": ["Sherry & VV"] },
+          { "role": "Programmer", "names": ["VV & Sherry"] },
+          { "role": "Artist", "names": ["Sherry & VV"] }
+        ]
+      },
+      {
+        "credits": [
+          { "role": "Audio Director", "names": ["Miles Clark", "Donny DeFala", "Sebastian Solis"] },
+          { "role": "Composer", "names": ["Shawn Gaskill", "Ela Brown", "Kate Muse","Neil Small"] },
+          { "role": "Sound Designer", "names": ["Matthew Bennet", "Ian Braesch", "Max Rich", "Shih-Shiou Hsu"] }
+        ]
+      }
+    ]
+  }
+  
