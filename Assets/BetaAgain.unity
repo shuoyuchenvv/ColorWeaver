@@ -2689,7 +2689,7 @@ PrefabInstance:
     - target: {fileID: 23795090098409790, guid: bae3378f8021a7049ae718792659c343, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e856279cef160334a9165c5c74084b93, type: 2}
+      objectReference: {fileID: 2100000, guid: 5c3f478ba024c6345b00b7d75fa35455, type: 2}
     - target: {fileID: 23795090098409790, guid: bae3378f8021a7049ae718792659c343, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -19913,7 +19913,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowers:
   - {fileID: 1828804436}
-  fireworks: {fileID: 0}
 --- !u!4 &749983507
 Transform:
   m_ObjectHideFlags: 0
@@ -22684,7 +22683,7 @@ Transform:
   m_GameObject: {fileID: 873065887}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.5, y: 88.6, z: 85.3}
+  m_LocalPosition: {x: -113.3, y: -5.5, z: 441.5}
   m_LocalScale: {x: 3.569035, y: 3.569035, z: 3.569035}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -23001,11 +23000,11 @@ MonoBehaviour:
   yellowOnScreen: {fileID: 1054543649}
   jumpPanelonscreen: {fileID: 49540368}
   tutorialCheck: {fileID: 1010126575}
-  yellowPeriodActivated: 1
-  redPeriodActivated: 1
-  greenPeriodActivated: 1
-  bluePeriodActivated: 1
-  jumpActivated: 1
+  yellowPeriodActivated: 0
+  redPeriodActivated: 0
+  greenPeriodActivated: 0
+  bluePeriodActivated: 0
+  jumpActivated: 0
 --- !u!114 &873065903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26862,7 +26861,6 @@ MonoBehaviour:
   - {fileID: 1025864034}
   - {fileID: 973245996}
   - {fileID: 355443847}
-  fireworks: {fileID: 0}
 --- !u!4 &988720525
 Transform:
   m_ObjectHideFlags: 0
@@ -32967,7 +32965,7 @@ PrefabInstance:
     - target: {fileID: 23795090098409790, guid: bae3378f8021a7049ae718792659c343, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e856279cef160334a9165c5c74084b93, type: 2}
+      objectReference: {fileID: 2100000, guid: 083259e100a66fe4ea0dbb2d999a1e13, type: 2}
     - target: {fileID: 23795090098409790, guid: bae3378f8021a7049ae718792659c343, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -52124,7 +52122,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e856279cef160334a9165c5c74084b93, type: 2}
+  - {fileID: 2100000, guid: 226d52a7e87d9c84a9d59f6b2f2b0561, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -53651,7 +53649,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowers:
   - {fileID: 882665065}
-  fireworks: {fileID: 0}
 --- !u!4 &1817216033
 Transform:
   m_ObjectHideFlags: 0
@@ -54636,7 +54633,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e856279cef160334a9165c5c74084b93, type: 2}
+  - {fileID: 2100000, guid: 083259e100a66fe4ea0dbb2d999a1e13, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
