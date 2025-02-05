@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GithubProject\\ColorWeaver\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2138ACEC-DB3B-C86E-F63D-46C953A57925}|Assembly-CSharp.csproj|c:\\githubproject\\colorweaver\\assets\\scripts\\settingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2138ACEC-DB3B-C86E-F63D-46C953A57925}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\settingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2138ACEC-DB3B-C86E-F63D-46C953A57925}|Assembly-CSharp.csproj|c:\\githubproject\\colorweaver\\assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2138ACEC-DB3B-C86E-F63D-46C953A57925}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2138ACEC-DB3B-C86E-F63D-46C953A57925}|Assembly-CSharp.csproj|C:\\GithubProject\\ColorWeaver\\assets\\opening\u0026credits\\startmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2138ACEC-DB3B-C86E-F63D-46C953A57925}|Assembly-CSharp.csproj|solutionrelative:assets\\opening\u0026credits\\startmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2A249FA-C5BC-65B8-437E-0666925D5B6F}|MK.Toon.Editor.csproj|C:\\GithubProject\\ColorWeaver\\assets\\_mk\\mktoon\\editor\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2A249FA-C5BC-65B8-437E-0666925D5B6F}|MK.Toon.Editor.csproj|solutionrelative:assets\\_mk\\mktoon\\editor\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SettingManager.cs",
+              "DocumentMoniker": "C:\\GithubProject\\ColorWeaver\\Assets\\Scripts\\SettingManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SettingManager.cs",
+              "ToolTip": "C:\\GithubProject\\ColorWeaver\\Assets\\Scripts\\SettingManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SettingManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T21:34:19.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\GithubProject\\ColorWeaver\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
+              "ToolTip": "C:\\GithubProject\\ColorWeaver\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerMovement.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwGEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T21:13:09.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StartMenu.cs",
+              "DocumentMoniker": "C:\\GithubProject\\ColorWeaver\\Assets\\Opening\u0026Credits\\StartMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Opening\u0026Credits\\StartMenu.cs",
+              "ToolTip": "C:\\GithubProject\\ColorWeaver\\Assets\\Opening\u0026Credits\\StartMenu.cs",
+              "RelativeToolTip": "Assets\\Opening\u0026Credits\\StartMenu.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T21:10:20.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Configuration.cs",
+              "DocumentMoniker": "C:\\GithubProject\\ColorWeaver\\Assets\\_MK\\MKToon\\Editor\\Configuration.cs",
+              "RelativeDocumentMoniker": "Assets\\_MK\\MKToon\\Editor\\Configuration.cs",
+              "ToolTip": "C:\\GithubProject\\ColorWeaver\\Assets\\_MK\\MKToon\\Editor\\Configuration.cs",
+              "RelativeToolTip": "Assets\\_MK\\MKToon\\Editor\\Configuration.cs",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAjwAgBAACRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T23:36:58.71Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
