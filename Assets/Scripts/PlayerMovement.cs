@@ -44,18 +44,92 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         SetupInitialState();
+        horizontalInput = 0;
+        verticalInput = 0;
+        velocity = Vector3.zero;
     }
 
     void Update()
     {
         GetPlayerInput();
         HandleMovement();
+        HandleCameraControl();  
+    }
+
+    public void SetControlMode(bool useController)
+    {
+        isUsingController = useController;
+        Debug.Log($"PlayerMovement control mode changed to: {(useController ? "Controller" : "Keyboard/Mouse")}");
+
+        //Update new mode 
+        GetPlayerInput();
+    }
+
+    private void HandleCameraControl()
+    {
+        Debug.Log("HandleCameraControl called");
+
+        if (isUsingController)
+        {
+            Debug.Log("Using controller");
+
+            // Right stick camera control
+            float lookX = Input.GetAxis("Right_Horizontal") * mouseSensitivity * Time.deltaTime*100f;
+            float lookY = Input.GetAxis("Right_Vertical") * mouseSensitivity * Time.deltaTime*100f;
+
+            Debug.Log($"Right stick input: X={lookX}, Y={lookY}");
+
+            if (Mathf.Abs(lookX) > 0.01f || Mathf.Abs(lookY) > 0.01f)  // 
+            {
+                currentX += lookX;
+                currentY = Mathf.Clamp(currentY - lookY, -verticalAngleLimit, verticalAngleLimit);
+                UpdateCameraPosition();
+            }
+
+            
+        }
+        else
+        {
+            Debug.Log("Using keyboard/mouse");
+
+            // Mouse camera control
+            if (Input.GetMouseButton(1))  // Right mouse button
+            {
+                float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+                float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+                currentX += mouseX;
+                currentY = Mathf.Clamp(currentY - mouseY, -verticalAngleLimit, verticalAngleLimit);
+            }
+        }
+
+        UpdateCameraPosition();
     }
 
     private void SetupInitialState()
     {
+
         // Get control type preference
-        isUsingController = PlayerPrefs.GetInt("ControlType", 0) == 1;
+        isUsingController = (PlayerPrefs.GetInt("ControlType", 0) == 1);
+        Debug.Log($"Loading control type from PlayerPrefs: {PlayerPrefs.GetInt("ControlType", 0)}");
+        Debug.Log($"isUsingController set to: {isUsingController}");
+        /*
+        // Get control type preference
+        //isUsingController = PlayerPrefs.GetInt("ControlType", 0) == 1;
+        if (SettingsManager.Instance != null && SettingsManager.Instance.controlTypeDropdown != null)
+        {
+            isUsingController = SettingsManager.Instance.controlTypeDropdown.value == 1;
+            Debug.Log("ControlType from SettingsManager: " + SettingsManager.Instance.controlTypeDropdown.value);
+        }
+        else
+        {
+            Debug.LogError("SettingsManager or controlTypeDropdown reference not found!");
+            isUsingController = false;  // 设置一个默认值
+        }
+
+        Debug.Log("IsUsingController: " + isUsingController);
+        */
+
 
         // Setup cursor and camera
         Cursor.lockState = CursorLockMode.Locked;
@@ -65,16 +139,33 @@ public class PlayerMovement : MonoBehaviour
         currentX = 180f;
         currentY = 10f;
         UpdateCameraPosition();
+
+        //initialize input
+        horizontalInput = 0;
+        verticalInput = 0;
+        velocity = Vector3.zero;
     }
 
     private void GetPlayerInput()
     {
+        Debug.Log($"Control Mode: {(isUsingController ? "Controller" : "Keyboard/Mouse")}");
+
         if (isUsingController)
         {
             // Controller input
+            //horizontalInput = Input.GetAxis("Horizontal"); // use basic for a while
+            //verticalInput = Input.GetAxis("Vertical");     // use basic for a while
             horizontalInput = Input.GetAxis("Joy_Horizontal");
             verticalInput = Input.GetAxis("Joy_Vertical");
-            jumpPressed = Input.GetButtonDown("Joy_Jump"); // Usually mapped to B button
+            jumpPressed = Input.GetButtonDown("Joy_Jump"); // mapped to ▲ button
+
+            Debug.Log($"Controller Input - H: {horizontalInput}, V: {verticalInput}");
+
+            Debug.Log($"Using Controller - Raw Input Values:");
+            Debug.Log($"Horizontal: {Input.GetAxisRaw("Horizontal")}");
+            Debug.Log($"Vertical: {Input.GetAxisRaw("Vertical")}");
+            Debug.Log($"Joy_Horizontal: {Input.GetAxisRaw("Joy_Horizontal")}");
+            Debug.Log($"Joy_Vertical: {Input.GetAxisRaw("Joy_Vertical")}");
         }
         else
         {
@@ -82,6 +173,8 @@ public class PlayerMovement : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
             jumpPressed = Input.GetButtonDown("Jump");
+
+            Debug.Log($"Keyboard Input - H: {horizontalInput}, V: {verticalInput}");
         }
     }
 
@@ -182,6 +275,21 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             velocity.y = 0;
+        }
+    }
+
+
+    // test
+    void TestInputs()
+    {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        float jh = Input.GetAxis("Joy_Horizontal");
+        float jv = Input.GetAxis("Joy_Vertical");
+
+        if (h != 0 || v != 0 || jh != 0 || jv != 0)
+        {
+            Debug.Log($"Input Test - K/M: ({h}, {v}), Controller: ({jh}, {jv})");
         }
     }
 }

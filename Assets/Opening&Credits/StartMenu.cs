@@ -7,20 +7,20 @@ public class StartMenu: MonoBehaviour
     public GameObject mainButtons;
     public GameObject settingsPanel;
 
-    
+
     /*
     public enum ControlType
     {
         KeyboardMouse,
         Controller
-    }
+    }*/
 
     public void SetControlType(int controlType)
     {
         PlayerPrefs.SetInt("ControlType", controlType);
         PlayerPrefs.Save();
     }
-    */
+    
 
     public void PlayGame()
     {

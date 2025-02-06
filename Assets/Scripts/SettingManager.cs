@@ -29,16 +29,56 @@ public class SettingsManager: MonoBehaviour
     {
         // load the setting you saved
         int controlType = PlayerPrefs.GetInt("ControlType", 0);
+        Debug.Log($"SettingsManager LoadSettings - Control Type: {controlType}");
+
         if (controlTypeDropdown != null)
         {
             controlTypeDropdown.value = controlType;
+            // immediately apply
+            SetControlType(controlType);
+        }
+        else
+        {
+            Debug.LogError("SettingsManager: controlTypeDropdown is null!");
+        }
+    }
+
+    public void ForceControllerMode()
+    {
+        Debug.Log("Forcing Controller Mode");
+        SetControlType(1);
+        if (controlTypeDropdown != null)
+        {
+            controlTypeDropdown.value = 1;
         }
     }
 
     public void SetControlType(int type)
     {
+        Debug.Log($"Setting control type to: {type}");
         PlayerPrefs.SetInt("ControlType", type);
         PlayerPrefs.Save();
+        Debug.Log($"SettingsManager: Saved control type. Current value in PlayerPrefs: {PlayerPrefs.GetInt("ControlType", 0)}");
+
+
+        // Find and update all active PlayerMovement scripts
+        PlayerMovement[] players = FindObjectsOfType<PlayerMovement>();
+        foreach (var player in players)
+        {
+            player.SetControlMode(type == 1);
+        }
+        /*
+        // Inform PlayerMovement update
+        var player = GameObject.FindObjectOfType<PlayerMovement>();
+        if (player != null)
+        {
+            player.SetControlMode(type == 1);
+        }
+        else
+        {
+            Debug.LogError("SettingsManager: Could not find PlayerMovement component!");
+        }
+        */
     }
 
     public void ToggleSettingsPanel()

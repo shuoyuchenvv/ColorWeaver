@@ -21,12 +21,14 @@ public class CameraFollow : MonoBehaviour
     private float targetCameraDistance;   // Target camera distance (smooth adjustment)
     private Vector3 desiredPosition;      // The desired camera position
     private bool isColliding = false;     // To track if we are colliding
+    private bool isUsingController;
 
     void Start()
     {
         currentCameraDistance = maxCameraDistance; // Start with the maximum distance
         targetCameraDistance = maxCameraDistance;  // Set target distance to max initially
         Cursor.lockState = CursorLockMode.Locked;  // Lock the cursor in the center of the screen
+        isUsingController = PlayerPrefs.GetInt("ControlType", 0) == 1;
 
         // Get the TransparencyController component from the player
         transparencyController = player.GetComponent<TransparencyController>();
@@ -66,11 +68,14 @@ public class CameraFollow : MonoBehaviour
     // Handle mouse input to rotate the camera around the player
     void HandleMouseInput()
     {
-        currentYaw += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        currentPitch -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if (!isUsingController)  // only use mouse when mouse is on
+        {
+            currentYaw += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            currentPitch -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        // Clamp the vertical rotation to prevent over-rotation
-        currentPitch = Mathf.Clamp(currentPitch, -verticalLimit, verticalLimit);
+            // Clamp the vertical rotation to prevent over-rotation
+            currentPitch = Mathf.Clamp(currentPitch, -verticalLimit, verticalLimit);
+        }
     }
 
     // Detect collisions between the player and camera, adjust camera distance if necessary

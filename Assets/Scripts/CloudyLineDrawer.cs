@@ -4,48 +4,48 @@ using UnityEngine;
 
 public class CloudyLineDrawer : MonoBehaviour
 {
+    [Header("Component References")]
     public LineRenderer lineRenderer;
     public GameObject linePrefab;
     public InstructionTutorial instructionTutorial;
+    public PlayerMovement playerMovement;
+    public EnergyBar energyBar;
 
+    [Header("Materials")]
     public Material redMaterial;
     public Material yellowMaterial;
     public Material blueMaterial;
     public Material greenMaterial;
 
-    public float energyCostPerSet = 10f; // Cost per set of colliders
+    [Header("Particle Prefabs")]
     public GameObject redFire;
     public GameObject yellowFire;
     public GameObject blueFire;
     public GameObject greenFire;
 
-    public PlayerMovement playerMovement;
-
-    //public float jumpSideOffset;
-    public Vector3 offset = new Vector3(0, -1, 0); // Offset to draw the line from the bottom of the player
-    public int maxTotalColliders = 50; // Max number of total colliders allowed
+    [Header("Settings")]
+    public float energyCostPerSet = 10f;
+    public Vector3 offset = new Vector3(0, -1, 0);
+    public int maxTotalColliders = 50;
     public int existTime = 10;
     public Vector3 fartInterval = new Vector3(0, 3, 0);
 
-    public EnergyBar energyBar;
     private GameObject particlePrefab;
-
-    private List<Vector3> ribbonPositions = new List<Vector3>(); // Store positions for the ribbon
+    private List<Vector3> ribbonPositions = new List<Vector3>();
     private List<Material> segmentMaterials = new List<Material>();
     private Material currentMaterial;
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
+    private List<Vector3> colliderPositions = new List<Vector3>();
+    private List<GameObject> collidersList = new List<GameObject>();
 
-    private List<Vector3> colliderPositions = new List<Vector3>(); // Store positions during the collider generation
-    private List<GameObject> collidersList = new List<GameObject>(); // List to keep track of all created colliders
     private bool fireIsRecord = false;
-
     private bool collidersActive = false;
     private bool hasChangedColor = false;
+    private bool colored = false;
+    private bool isUsingController;
 
     private Vector3 velocity;
     private CharacterController controller;
-    private bool colored;
-
 
 
     void Start()
@@ -53,8 +53,110 @@ public class CloudyLineDrawer : MonoBehaviour
         energyBar = GetComponent<EnergyBar>();
         controller = GetComponent<CharacterController>();
         colored = false;
+        isUsingController = PlayerPrefs.GetInt("ControlType", 0) == 1;
     }
 
+    void Update()
+    {
+        HandleColorChange();
+        DrawRibbon();
+    }
+
+    private void HandleColorChange()
+    {
+        if (isUsingController)
+        {
+            //test
+            float dpadH = Input.GetAxisRaw("DPad_Horizontal");
+            float dpadV = Input.GetAxisRaw("DPad_Vertical");
+            Debug.Log($"DPad Input - H: {dpadH}, V: {dpadV}");
+
+            if (dpadV > 0.5f && instructionTutorial.redPeriodActivated)
+            {
+                Debug.Log("Trying to change to Red");
+                hasChangedColor = true;
+                ChangeMaterial(redMaterial);
+                particlePrefab = redFire;
+                colored = true;
+            }
+            else if (dpadH > 0.5f && instructionTutorial.bluePeriodActivated)
+            {
+                Debug.Log("Trying to change to Blue");
+                hasChangedColor = true;
+                ChangeMaterial(blueMaterial);
+                particlePrefab = blueFire;
+                colored = true;
+            }
+
+
+            //
+            if (Input.GetButtonDown("Joy_Jump") && colored && instructionTutorial.jumpActivated)
+            {
+                if (energyBar.HasEnoughEnergy(energyCostPerSet) && !energyBar.isRegenerating)
+                {
+                    JustFart();
+                    Debug.Log("Controller Jump, y velocity = " + controller.velocity.y);
+                }
+            }
+            // D-pad controls for controller
+            if (Input.GetAxisRaw("DPad_Vertical") > 0.5f && instructionTutorial.redPeriodActivated)  // 上
+            {
+                ChangeColor(redMaterial, redFire);
+            }
+            else if (Input.GetAxisRaw("DPad_Horizontal") > 0.5f && instructionTutorial.bluePeriodActivated)  // 右
+            {
+                ChangeColor(blueMaterial, blueFire);
+            }
+            else if (Input.GetAxisRaw("DPad_Vertical") < -0.5f && instructionTutorial.greenPeriodActivated)  // 下
+            {
+                ChangeColor(greenMaterial, greenFire);
+            }
+            else if (Input.GetAxisRaw("DPad_Horizontal") < -0.5f && instructionTutorial.yellowPeriodActivated)  // 左
+            {
+                ChangeColor(yellowMaterial, yellowFire);
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && colored && instructionTutorial.jumpActivated)
+            {
+                if (energyBar.HasEnoughEnergy(energyCostPerSet) && !energyBar.isRegenerating)
+                {
+                    JustFart();
+                    Debug.Log("Keyboard Jump, y velocity = " + controller.velocity.y);
+                }
+            }
+            // Keyboard number controls
+            if (Input.GetKeyDown(KeyCode.Alpha1) && instructionTutorial.redPeriodActivated)
+            {
+                ChangeColor(redMaterial, redFire);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2) && instructionTutorial.bluePeriodActivated)
+            {
+                ChangeColor(blueMaterial, blueFire);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3) && instructionTutorial.greenPeriodActivated)
+            {
+                ChangeColor(greenMaterial, greenFire);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4) && instructionTutorial.yellowPeriodActivated)
+            {
+                ChangeColor(yellowMaterial, yellowFire);
+            }
+        }
+    }
+
+    private void ChangeColor(Material material, GameObject fireParticle)
+    {
+        hasChangedColor = true;
+        ChangeMaterial(material);
+        particlePrefab = fireParticle;
+        colored = true;
+    }
+
+
+    //old update
+    /*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1) && instructionTutorial.redPeriodActivated)
@@ -137,7 +239,7 @@ public class CloudyLineDrawer : MonoBehaviour
     //        RecordColliderPath();
     //    }
 
-    }
+    }    */
 
     public void JustFart()
     {
