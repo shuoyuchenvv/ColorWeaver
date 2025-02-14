@@ -432,7 +432,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 37390
+  m_LastSelectedObjectID: 34930
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -906,9 +906,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.08959868, y: 0.4336702, z: -0.042908907, w: 0.8955787}
   m_Size:
-    m_Target: 176.50772
+    m_Target: 192.75084
     speed: 2
-    m_Value: 176.50772
+    m_Value: 192.75084
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2491,7 +2491,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004cad00004ead000050ad000052ad000054ad000056ad000058ad00005aad00005cad00005ead000060ad000062ad000064ad000066ad000068ad00006aad00006cad00006ead000070ad000072ad000074ad000076ad000078ad00007aad00007cad00007ead000080ad000082ad000084ad000086ad000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000004cad00004ead000050ad000052ad000054ad000056ad000058ad00005aad00005cad00005ead000060ad000062ad000064ad000066ad000068ad00006aad00006cad00006ead000070ad000072ad000074ad000076ad000078ad00007aad00007cad00007ead000080ad000082ad000084ad000086ad000044ae000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2518,7 +2518,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 72880000
     m_LastClickedInstanceID: 34930
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300005060000098f200003e44010000df0100000000004ab30000ceaa0b0016840000d4300000cc1d0200d29101009e8b00006c990000c29401009a9f020026c30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

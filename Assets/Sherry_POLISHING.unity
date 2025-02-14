@@ -31435,10 +31435,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: END GAME
+  m_text: '- END -'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 01329266931964dcd96abe5a67dac37d, type: 2}
-  m_sharedMaterial: {fileID: 5651634628456126433, guid: 01329266931964dcd96abe5a67dac37d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70d0dd7d0e5772949bc806aee7d64af7, type: 2}
+  m_sharedMaterial: {fileID: -8931902089570784225, guid: 70d0dd7d0e5772949bc806aee7d64af7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -31462,8 +31462,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 115.9
-  m_fontSizeBase: 115.9
+  m_fontSize: 187.85
+  m_fontSizeBase: 187.85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
