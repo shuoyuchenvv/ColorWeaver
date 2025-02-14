@@ -6,6 +6,7 @@ public class PlayerInteraction : MonoBehaviour
     public float doubleClickTimeLimit = 0.3f; //
     private float lastClickTime = 0f; // 
     private Ignitable currentIgnitable; // 
+    
 
     void Update()
     {

@@ -46,7 +46,7 @@ public class MarbleFall : MonoBehaviour
             // 给 marble 一个微微向上的速度
             marbleRigidbody.velocity = new Vector3(
                 marbleRigidbody.velocity.x, // 保留当前 x 方向速度
-                0.1f,                       // 设置微微向上的速度
+                0.2f,                       // 设置微微向上的速度
                 marbleRigidbody.velocity.z  // 保留当前 z 方向速度
             );
 

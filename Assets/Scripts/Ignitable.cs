@@ -5,7 +5,7 @@ public class Ignitable : MonoBehaviour
 {
     public string marbleStandTag = "MarbleStand";
     public string marbleTag = "Marble";
-    private bool playerCarryRed;
+    private bool playerCarryRed=false;
 
     // Ranges and Effects for Yellow Effect
     public float ignitionRange = 8f;       // Range for ignition
