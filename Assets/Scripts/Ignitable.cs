@@ -21,8 +21,8 @@ public class Ignitable : MonoBehaviour
     //public float pushAngleThreshold = 60f;
 
     //Actived or not
-    public static bool yellowActived = true ;
-    public static bool redActived = true;
+    public static bool yellowActived = false ;
+    public static bool redActived = false;
     public static bool greenActived = false;
     public static bool blueActived = false;
 

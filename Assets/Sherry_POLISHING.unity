@@ -25172,7 +25172,7 @@ Transform:
   m_GameObject: {fileID: 873065887}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.1, y: 422.72, z: 41.3}
+  m_LocalPosition: {x: -119.7, y: -11.3, z: 455.6}
   m_LocalScale: {x: 3.569035, y: 3.569035, z: 3.569035}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -25489,11 +25489,11 @@ MonoBehaviour:
   yellowOnScreen: {fileID: 1054543649}
   jumpPanelonscreen: {fileID: 49540368}
   tutorialCheck: {fileID: 1010126575}
-  yellowPeriodActivated: 1
-  redPeriodActivated: 1
-  greenPeriodActivated: 1
-  bluePeriodActivated: 1
-  jumpActivated: 1
+  yellowPeriodActivated: 0
+  redPeriodActivated: 0
+  greenPeriodActivated: 0
+  bluePeriodActivated: 0
+  jumpActivated: 0
 --- !u!114 &873065903
 MonoBehaviour:
   m_ObjectHideFlags: 0
