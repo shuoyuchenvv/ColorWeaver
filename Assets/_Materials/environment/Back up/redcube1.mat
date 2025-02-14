@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: redcube
+  m_Name: redcube1
   m_Shader: {fileID: 4800000, guid: 60e29b7951f20da47b11861d166b7036, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -242,11 +242,11 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 0.35534585, b: 0.35534585, a: 1}
+    - _Color: {r: 0.6509434, g: 0.28657883, b: 0.37333232, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HalftoneColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0.31689805, g: 0.3872365, b: 0.46226418, a: 0.92156863}
+    - _OutlineColor: {r: 0.735849, g: 0.3243822, b: 0.30313274, a: 0.92156863}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimShadowColor: {r: 1, g: 0.21440426, b: 0, a: 0}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}

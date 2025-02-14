@@ -74,7 +74,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LightRampTexture:
-        m_Texture: {fileID: 2800000, guid: 2fece699f1e590e488feed73954a6ad9, type: 3}
+        m_Texture: {fileID: 2800000, guid: bfdd819382e99504db1bcbc864cd1b31, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -242,12 +242,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.5801887, g: 1, b: 0.692377, a: 1}
+    - _Color: {r: 0.98742133, g: 1, b: 0.9989801, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HalftoneColor: {r: 0, g: 0, b: 0, a: 1}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0.9781904, g: 1, b: 0.006289184, a: 1}
-    - _RimColor: {r: 1, g: 0.8714005, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 0.5481966, b: 0.30817604, a: 1}
+    - _RimColor: {r: 1, g: 0.9617462, b: 0.70440245, a: 1}
     - _RimShadowColor: {r: 0.9137255, g: 0.57254905, b: 0, a: 0}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.6509434, g: 0.43396223, b: 0.43396223, a: 1}
